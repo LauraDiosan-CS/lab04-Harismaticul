@@ -4,6 +4,7 @@
 #include <string.h>
 #include <cassert>
 #include <iostream>
+#define strcpy_s
 
 void testConturi()
 {
@@ -19,8 +20,6 @@ void testConturi()
 	Accounts a2(1, 41, tipul2, descriere2);
 	assert(a1.getDay() == 5);
 	assert(a2.getSum() == 41);
-	assert(strcmp(a1.get_type(), "In") == 0);
-	assert(strcmp(a1.get_description(), "Salar") == 0);
 	a1.set_day(10);
 	a2.set_type(tipul1);
 	a2.set_description(descriere1);
