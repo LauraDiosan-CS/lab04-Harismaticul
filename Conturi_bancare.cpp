@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ostream>
 #include <iostream>
+#define strcpy_s
 using namespace std;
 
 Accounts::Accounts()
