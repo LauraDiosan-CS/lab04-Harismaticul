@@ -1,15 +1,17 @@
 #pragma once
 #include "Conturi_bancare.h"
 
-class Repo
-{
+//clasa repo cu operatiile CRUD,constructori si destructor
+class Repo {
 private:
-	Accounts account[100];
-	int n;
+    Bank Banks[101];
+    int n;
 public:
-	Repo();
-	~Repo();
-	void add(Accounts a);
-	Accounts* show();
-	int get_size();
+    Repo();
+    ~Repo();
+    void addBank(Bank b);
+    void deleteBank(int nr);
+    void updateBank(int nr, Bank b);
+    Bank* getAll();
+    int getSize();
 };
