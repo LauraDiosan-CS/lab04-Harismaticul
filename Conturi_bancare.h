@@ -1,28 +1,28 @@
 #pragma once
-#include <ostream>
+#include <iostream>
 using namespace std;
 
-class Accounts
-{
+//clasa banca cu toate atributele,operatorii,getteri si setteri specificati in enunt,constrctori si destructori specifici
+class Bank {
 private:
-	int day;
-	int sum;
-	char* type;
-	char* description;
+    int day;
+    int money;
+    char* type;
+    char* desc;
 public:
-	Accounts();
-	Accounts(int day, int sum, char* type, char* description);
-	Accounts(const Accounts& a);
-	~Accounts();
-	int getDay();
-	int getSum();
-	char* get_type();
-	char* get_description();
-	void set_day(int day);
-	void set_sum(int sum);
-	void set_type(char* type);
-	void set_description(char* description);
-	Accounts& operator=(const Accounts& c);
-	bool operator==(const Accounts& c);
-	friend ostream& operator<<(ostream& os, const Accounts& a);
+    Bank();
+    Bank(int day, int money, char* type, char* desc);
+    Bank(const Bank& b);
+    ~Bank();
+    int getDay();
+    int getMoney();
+    char* getType();
+    char* getDesc();
+    void setDay(int day);
+    void setMoney(int money);
+    void setType(char* type);
+    void setDesc(char* desc);
+    Bank& operator=(const Bank& b);
+    bool operator==(const Bank& b);
+    friend ostream& operator<<(ostream& os, const Bank& b);
 };
