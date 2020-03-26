@@ -1,25 +1,50 @@
 #include "Repo.h"
-#include <cstddef>
+//clasa repository
 
+
+//constructor
 Repo::Repo()
 {
-	this->n = 0;
+    this->n = 0;
 }
 
+//destructor
 Repo::~Repo()
 {
-	this->n = 0;
+    this->n = 0;
 }
 
-int Repo::get_size()
+//functie adaugare obiect in lista de obiecte
+void Repo::addBank(Bank b)
 {
-	return this->n;
+    this->Banks[this->n++] = b;
 }
-void Repo::add(Accounts a)
+
+//pentru lab5
+void Repo::deleteBank(int nr)
 {
-	this->account[this->n++] = a;
+    for (int i = 0; i < n; i++)
+        if (this->Banks[i].getDay() == nr)
+            for (int k = i; k < n - 1; k++)
+                this->Banks[k] = this->Banks[k + 1];
+    this->n--;
 }
-Accounts* Repo::show()
+
+//pentru lab5
+void Repo::updateBank(int nr, Bank b)
 {
-	return this->account;
+    for (int i = 0; i < n; i++)
+        if (this->Banks[i].getDay() == nr)
+            this->Banks[i] = b;
+}
+
+//luare toate obiectele
+Bank* Repo::getAll()
+{
+    return this->Banks;
+}
+//luare marime
+int Repo::getSize()
+{
+    return this->n;
 }
